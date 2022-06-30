@@ -101,11 +101,11 @@ const renewToken = async (req, res = response) => {
     const uid = req.uid;
     const token = await generarJwt(uid);
 
-    const usurio = await Usuario.findById(uid);
+    const usuario = await Usuario.findById(uid);
 
     res.json({
         ok: true,
-        usurio,
+        usuario,
         token
     })
 }
